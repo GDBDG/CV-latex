@@ -1,0 +1,98 @@
+\def\BB{$\bullet$}
+
+% Header with name and wanted job
+\newcommand{\nameheader}{
+    \fcolorbox
+        {white}
+        {darkcol}
+        {
+            \begin{minipage}[t]{\mpwidth}
+                \begin {center}
+                    \vspace{0.5em}
+                    \Large{\textbf{ \textcolor{white}{ \uppercase{\name} } }}\\[-0.5em] 
+                    \textcolor{white}{ \rule{0.1\textwidth}{1.25pt} } \\[0.3em]
+                    \large{ \textcolor{white} {\jobdescription} }
+                    \vspace{0.5em}
+                \end {center}
+            \end{minipage}
+    }
+}
+
+
+% icon shortcut
+% #1 : icon color
+% #2 : icon
+% #3 : content
+\newcommand{\infofield}[3][blue]
+{\mbox
+    {\makebox[5mm]
+        {
+            \textcolor
+            {#1}
+            {\normalsize #2}
+        }
+    \hspace{0.5em}#3
+    }
+    \vspace{0.2em}\newline
+}
+
+% CV skill : name of the skill and logo if available
+% #1 : name of the skill
+% #2 : logo path, empty if no logo
+% #3 : grade on the skill (between 0 and 1)lat
+\newcommand{\cvskill}[3] {
+	\begin{tabular*}{1\mpwidth}{p{0.72\mpwidth}  r}
+ 		\textcolor{black}{\textbf{#1}} & \IfEq{#2}{}{}{\includegraphics[width=0.5cm]{#2}}\\
+	\end{tabular*}%
+	\hspace{4pt}
+	\begin{tikzpicture}[scale=1,rounded corners=2pt,very thin]
+		\fill [lightcol] (0,0) rectangle (1\mpwidth, 0.15);
+		\fill [darkcol] (0,0) rectangle (#3 * \the\mpwidth, 0.15);
+  	\end{tikzpicture}%
+}
+
+% set the content of the left bar
+\newcommand{\highlightbar}[1]{%
+    \def\@highlightbar{%
+        \begin{minipage}[t]{\dimexpr \highlightwidth-\marginleft-\marginright}%
+            #1%
+        \end{minipage}%
+    }
+}
+
+% set the content of the main bar
+\newcommand{\mainbar}[1]{%
+    \def\@mainbar{%
+        \begin{minipage}[t]{\mainwidth}%
+            #1%
+        \end{minipage}%
+    }
+}
+
+\newcommand{\divider}{\vspace{0.7em}\textcolor{dividercol}{\rule{\linewidth}{0.2 mm}} \\[0.7em]}
+
+% Description of a professionnal experience or formation
+% #1 : title
+% #2 : compagny or school
+% #3 : period
+% #4 : geographical location
+% #5 : description
+% #6 : logo of the compagny / school
+\newcommand{\cvevent}[6]{
+        \begin{tabular}{p{0.73\linewidth} p{0.23\linewidth}}
+            \begin{minipage}{\linewidth}
+                {\large\color{black}#1}
+                \\[0.3em]
+                \ifstrequal{#2}{}{}{
+                \textbf{\color{blue}#2}
+                \\[0.3em]}
+                \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar*[regular]~#3}}}%
+                \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker*~#4}}}
+                \newline
+                \small{#5}
+            \end{minipage}
+            &
+            \IfEq{#6}{}{}{\raisebox{-0.7\height}{\includegraphics[width=\linewidth]{#6}}} \tabularnewline
+        \end{tabular}
+        
+}

@@ -1,0 +1,7 @@
+\renewcommand{\section}[2][]{%
+    \bigskip%
+    % \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr 1pt-\baselineskip}\raggedright\input{#1}}}%
+    \ifstrequal{#1}{}{}{\large \makebox[5mm][c]{#1}\hspace{0.5em}}
+    {\color{heading}\Large\bfseries\MakeUppercase{#2}}\\[-1ex]%
+    {\color{heading}\rule{\linewidth}{1.0pt}\par}\smallskip
+}

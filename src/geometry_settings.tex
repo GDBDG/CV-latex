@@ -1,0 +1,26 @@
+\newlength\highlightwidth{}
+\newlength\headerheight{}
+\newlength\marginleft{}
+\newlength\marginright{}
+\newlength\margintop{}
+\newlength\marginbottom{}
+\newlength\cveventpicturewidth{}
+
+% default sizes, margins, ...
+\newcommand{\mainwidth}{\dimexpr \textwidth-\highlightwidth \relax}
+
+\setlength\highlightwidth{8cm}
+\setlength\cveventpicturewidth{\dimexpr \mainwidth  / 8 \relax}
+\setlength\headerheight{6cm}
+\setlength\marginleft{1cm}
+\setlength\marginright{\marginleft}
+\setlength\margintop{1cm}
+\setlength\marginbottom{1cm}
+
+\geometry{left=\marginleft,right=\marginright,top=\margintop,bottom=\marginbottom}
+
+% minipage has an annoying af indent that must be removed
+\setlength{\parindent}{0pt}
+\newcommand{\cveventwidth}{\dimexpr 0.75\mainwidth \relax} 
+
+\newcommand{\mpwidth}{\dimexpr \linewidth-\fboxsep-\fboxsep \relax}
