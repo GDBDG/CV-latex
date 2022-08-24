@@ -82,13 +82,10 @@
 % #5 : description
 % #6 : logo of the compagny / school
 \newcommand{\cvevent}[6]{
-        \begin{tabular}{p{0.7\linewidth} p{0.3\linewidth}}
-            \multicolumn{2}{l|}{
-                \begin{minipage}{\linewidth}
-                    {\large\color{cveventtitlecolor}#1}
-                \end{minipage}
-            } \tabularnewline
+        \begin{tabular}{p{0.72\linewidth} p{0.28\linewidth}}
             \begin{minipage}{\linewidth}
+                {\large\color{cveventtitlecolor}#1}
+                \\[0.3em]
                 \ifstrequal{#2}{}{}{
                 \textbf{\color{compagny}#2}
                 \\[0.3em]}
@@ -96,7 +93,7 @@
                 \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker*~#4}}}
             \end{minipage}
             &
-            \IfEq{#6}{}{}{\raisebox{-0.7\height}{\resizebox{!}{12mm}{\includegraphics{#6}}}} \tabularnewline
+            \IfEq{#6}{}{}{\raisebox{-0.7\height}{\resizebox{!}{13mm}{\includegraphics{#6}}}} \tabularnewline
             \multicolumn{2}{l|}{
                 \begin{minipage}{\linewidth}
                     \small{#5}
