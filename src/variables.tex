@@ -4,7 +4,7 @@
 \newcommand{\wantedjob}{}
 \newcommand{\adress}{}
 \newcommand{\numberphone}{}
-\newcommand{\permisB}{}
+\newcommand{\permisB}{true}
 %Setters
 \newcommand{\setmail}[1]{
     \renewcommand
@@ -86,9 +86,9 @@
 }
 
 \newcommand{\interests}{}
-\newcommand{\addinterest}[1]{
+\newcommand{\addinterest}[2]{
     \makeatletter
-    \g@addto@macro\interests{#1}    
+    \g@addto@macro\interests{\infofield{#1}{#2}}    
     \makeatother
 }   
 

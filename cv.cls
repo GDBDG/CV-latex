@@ -1,14 +1,17 @@
 \ProvidesClass{cv}[2022/08/10 CV class]
-\LoadClass{article}
 \NeedsTeXFormat{LaTeX2e}
-\input{src/packagesCV.tex}
-
-\DeclareOption*{
-  \PassOptionsToClass{\CurrentOption}{article}
-}
-\ProcessOptions\relax
 
 \input{src/colors_settings.tex}
+\DeclareOption{nocolor}{
+    \input{src/no_color_settings.tex}
+}
+\DeclareOption*{
+    \PassOptionsToClass{\CurrentOption}{article}
+    }
+\ProcessOptions\relax
+\LoadClass{article}
+\input{src/packagesCV.tex}    
+
 \input{src/geometry_settings.tex}
 \input{src/section_settings.tex}
 \input{src/variables.tex}
@@ -23,18 +26,14 @@
     
     \vspace*{\fill}
     
-    \section[\faCogs]{SKILLS}
+    \section[\faCogs]{Compétences}
     \skilllist
 
     \section[\faLanguage]{Langues}
-        \small{
-            \languages
-        }
+        \languages
 
     \section[\faCoffee]{Centres d'intérêts}
-        \begin{itemize}
-            \interests                    
-        \end{itemize}
+        \interests                    
     
 }
 
