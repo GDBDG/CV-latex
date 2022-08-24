@@ -16,34 +16,34 @@
 \input{src/section_settings.tex}
 \input{src/variables.tex}
 
-\highlightbar{
+\sethighlightbar{
     \section[\faAddressBook]{CONTACT}
-        \mail
-        \nationnality
-        \numberphone
-        \adress
-        \permisB
+        \@mail
+        \@nationnality
+        \@phonenumber
+        \@adress
+        \@permisB
     
     \vspace*{\fill}
     
     \section[\faCogs]{Compétences}
-    \skilllist
+    \@skilllist
 
     \section[\faLanguage]{Langues}
-        \languages
+        \@languages
 
     \section[\faCoffee]{Centres d'intérêts}
-        \interests                    
+        \@interests                    
     
 }
 
-\mainbar{
+\setmainbar{
     \nameheader
 
     \section[\faGraduationCap]{Formation}
-        \formation
+        \@formation
     \section[\faCheck]{Expériences}
-        \experience
+        \@experience
         
     
 }

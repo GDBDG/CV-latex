@@ -1,16 +1,15 @@
-\newlength\highlightwidth{}
+\newlength\highlightwidth{} % width of the left column
 \newlength\headerheight{}
-\newlength\marginleft{}
-\newlength\marginright{}
-\newlength\margintop{}
-\newlength\marginbottom{}
-\newlength\cveventpicturewidth{}
+\newlength\marginleft{} % left margin (for geometry config)
+\newlength\marginright{} % right margin (for geometry config)
+\newlength\margintop{} %top margin (for geometry config)
+\newlength\marginbottom{} % bottom margin (for geometry config)
 
 % default sizes, margins, ...
-\newcommand{\mainwidth}{\dimexpr \textwidth-\highlightwidth \relax}
+% width of the right column
+\newcommand{\mainwidth}{\dimexpr \textwidth-\highlightwidth \relax} 
 
 \setlength\highlightwidth{8cm}
-\setlength\cveventpicturewidth{\dimexpr \mainwidth  / 8 \relax}
 \setlength\headerheight{6cm}
 \setlength\marginleft{1cm}
 \setlength\marginright{\marginleft}
@@ -21,6 +20,7 @@
 
 % minipage has an annoying af indent that must be removed
 \setlength{\parindent}{0pt}
+% width for the cvevent content (the remaining width is for the logo)
 \newcommand{\cveventwidth}{\dimexpr 0.75\mainwidth \relax} 
 
 \newcommand{\mpwidth}{\dimexpr \linewidth-\fboxsep-\fboxsep \relax}

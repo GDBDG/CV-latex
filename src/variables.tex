@@ -1,14 +1,14 @@
 %Variebles
-\newcommand{\mail}{}
-\newcommand{\nationnality}{}
-\newcommand{\wantedjob}{}
-\newcommand{\adress}{}
-\newcommand{\numberphone}{}
-\newcommand{\permisB}{true}
+\newcommand{\@mail}{}
+\newcommand{\@nationnality}{}
+\newcommand{\@wantedjob}{}
+\newcommand{\@adress}{}
+\newcommand{\@phonenumber}{}
+\newcommand{\@permisB}{true}
 %Setters
 \newcommand{\setmail}[1]{
     \renewcommand
-        {\mail}
+        {\@mail}
         {\infofield
             {\faEnvelope}
             {\href{mailto:#1}{#1}}
@@ -17,16 +17,16 @@
 
 \newcommand{\setnationnality}[1]{
     \renewcommand
-        {\nationnality}
+        {\@nationnality}
         {\infofield
             {\faGlobe}{#1}
         }
 }
 
-\newcommand{\setwantedjob}[1]{\renewcommand{\wantedjob}{#1}}
+\newcommand{\setwantedjob}[1]{\renewcommand{\@wantedjob}{#1}}
 \newcommand{\setadress}[1]{
     \renewcommand
-        {\adress}
+        {\@adress}
         {\infofield
             {\faMapMarker*}
             {#1}
@@ -34,7 +34,7 @@
 }
 \newcommand{\setnumberphone}[1]{
     \renewcommand
-        {\numberphone}
+        {\@phonenumber}
         {\infofield
             {\faPhone}
             {#1}
@@ -44,7 +44,7 @@
     \ifthenelse{\equal{#1}{false}}
         {}
         {\renewcommand
-            {\permisB}
+            {\@permisB}
             {\infofield
                 {\faCar}
                 {Permis B}
@@ -58,43 +58,43 @@
 %Skills
 
 
-\newcommand{\skilllist}{}
+\newcommand{\@skilllist}{}
 
 \newcommand{\addskill}[1]{
     \makeatletter
-    \g@addto@macro\skilllist{#1}
+    \g@addto@macro\@skilllist{#1}
     \makeatother
 }
 
 
-\newcommand{\name}{}
-\newcommand{\setname}[1]{\renewcommand{\name}{#1}}
+\newcommand{\@name}{}
+\newcommand{\setname}[1]{\renewcommand{\@name}{#1}}
 
-\newcommand{\jobdescription}{}
-\newcommand{\setjobdescription}[1]{\renewcommand{\jobdescription}{#1}}
+\newcommand{\@jobdescription}{}
+\newcommand{\setjobdescription}[1]{\renewcommand{\@jobdescription}{#1}}
 
-\newcommand{\languages}{}
-\newcommand{\setlanguages}[1]{\renewcommand{\languages}{#1}}
+\newcommand{\@languages}{}
+\newcommand{\setlanguages}[1]{\renewcommand{\@languages}{#1}}
 
-\newcommand{\experience}{}
+\newcommand{\@experience}{}
 
 \newcommand{\addexperience}[1]{
-    \def\oldexp{\experience}
+    \def\oldexp{\@experience}
     \makeatletter
-    \g@addto@macro\experience{#1}    
+    \g@addto@macro\@experience{#1}    
     \makeatother
 }
 
-\newcommand{\interests}{}
+\newcommand{\@interests}{}
 \newcommand{\addinterest}[2]{
     \makeatletter
-    \g@addto@macro\interests{\infofield{#1}{#2}}    
+    \g@addto@macro\@interests{\infofield{#1}{#2}}    
     \makeatother
 }   
 
-\newcommand{\formation}{}
+\newcommand{\@formation}{}
 \newcommand{\addformation}[1]{
     \makeatletter
-    \g@addto@macro\formation{#1}    
+    \g@addto@macro\@formation{#1}    
     \makeatother
 } 
