@@ -6,9 +6,10 @@ This CV use literally variables for the data, with setters (``\setvarname``), or
 
 ## Options
 This document takes the options provided by the class ``article``, but be carefull, the result might be strange.
-It provides also options to change the color very easily.
-* With no options, it uses the colors defined in the file ``src/colors_settings.tex``. (You don't need to touch or understand this file)
+It provides also options to change the color very easily, and the section's titles to put use english.
+* With no options, it uses the colors defined in the file ``src/colors_settings.tex``. (You don't need to touch or understand this file), and the section's titles defined in ``src/frenchsectiontitle.tex`` (french titles).
 * With the option ``nocolor``, all the colors are changed in black. (defined in the file ``src/no_colors_settings.)
+* With the option ``en``, the section's titles are changed to use English (title defined in ``src/englishsectiontitle.tex``).
 
 ## The contact values and languages competences
 All the contact values and languages data are defined in the file ``data/metadata.tex``. There are already the setters, with explicit names, please just put your content, that will be displayed in the document.
@@ -56,4 +57,16 @@ It uses the command ``\addexperience``, which works exactly like ``\addformation
 
 If you are a casual user, who only wants to make his CV, with no understanding of the sources, and who doesn't need to change the configuration, you don't need to reed this part, it uses more complex LaTeX concepts, and might be hard to understand.
 
-### 
+### Declare a new option 
+
+All options are declared on top of the cls file. I use special variables to memorize the options, and process them later in the cls (it allows me for example to import the xcolor package with the others, after the \loadclass). (I load the class after the option process, to pass the article class to it).
+
+I also use specific files that I import for variables that changes with an option (colors or languages). I consider it makes it very easy to add (or remove options, and make the code easier to understand).
+
+### Variables
+
+I use variables with setters for every attribute in the document. The variables name start with ``@``caracter, it's a convention to show variables with setters.
+
+### mypackage
+
+I define all the commands I use in this file.
