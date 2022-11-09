@@ -48,6 +48,10 @@
     \section[\faCoffee]{\hobbiestitle}
         \@interests                    
     
+    \IfEq{\iscertificationempty}{true}{}{
+        \section[\faAward]{\certificationtitle}
+            \@certifications
+    }
 }
 
 \setmainbar{

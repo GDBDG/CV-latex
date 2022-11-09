@@ -79,7 +79,6 @@
 \newcommand{\@experience}{}
 
 \newcommand{\addexperience}[1]{
-    \def\oldexp{\@experience}
     \makeatletter
     \g@addto@macro\@experience{#1}    
     \makeatother
@@ -98,3 +97,29 @@
     \g@addto@macro\@formation{#1}    
     \makeatother
 } 
+
+\newcommand{\@certifications}{}
+\newcommand{\iscertificationempty}{true}
+
+%#1 Certification name
+%#2 badge
+%#3 link to the certificate
+\newcommand{\certification}[3]{
+    \mbox{
+        \begin{minipage}{20pt}
+            \includegraphics[width=20pt]{#2}      
+        \end{minipage}
+        \hspace{5pt}
+        \begin{minipage}{\dimexpr \linewidth-20pt\relax}
+            \href{#3}{#1}       
+        \end{minipage}
+    }
+    % \\[0.5em]
+}
+
+\newcommand{\addcertification}[1]{
+    \renewcommand{\iscertificationempty}{false}
+    \makeatletter
+    \g@addto@macro\@certifications{#1}    
+    \makeatother
+}

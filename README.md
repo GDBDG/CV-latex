@@ -8,7 +8,7 @@ This CV use literally variables for the data, with setters (``\setvarname``), or
 This document takes the options provided by the class ``article``, but be carefull, the result might be strange.
 It provides also options to change the color very easily, and the section's titles to put use english.
 * With no options, it uses the colors defined in the file ``src/colors_settings.tex``. (You don't need to touch or understand this file), and the section's titles defined in ``src/frenchsectiontitle.tex`` (french titles).
-* With the option ``nocolor``, all the colors are changed in black. (defined in the file ``src/no_colors_settings.)
+* With the option ``nocolor``, all the colors are changed in black. (defined in the file ``src/no_colors_settings``.)
 * With the option ``en``, the section's titles are changed to use English (title defined in ``src/englishsectiontitle.tex``).
 
 ## The contact values and languages competences
