@@ -5,13 +5,16 @@
 % Variables liées aux options
 \newcommand{\languageoption}{fr}
 \newcommand{\coloroption}{}
-
+\newcommand{\technologo}{}
 \DeclareOption{nocolor}{
     \IfEq{\coloroption}{}{\renewcommand{\coloroption}{nocolor}}{\ClassWarning{CV}{color option already changed}}
     \renewcommand{\coloroption}{nocolor}
 }
 \DeclareOption{en}{
     \IfEq{\languageoption}{fr}{\renewcommand{\languageoption}{en}}{\ClassWarning{CV}{color option already changed}}
+}
+\DeclareOption{notechnologo}{
+    \renewcommand{\technologo}{false}
 }
 \DeclareOption*{
     \PassOptionsToClass{\CurrentOption}{article}
@@ -21,12 +24,14 @@
 
 \input{src/packagesCV.tex}    
 \input{src/geometry_settings.tex}
-\input{src/section_settings.tex}
+\input{src/section/section_settings.tex}
 \input{src/variables.tex}
-\IfEq{\coloroption}{}{\input{src/colors_settings.tex}}{}
-\IfEq{\coloroption}{nocolor}{\input{src/no_color_settings.tex}}{}
-\IfEq{\languageoption}{fr}{\input{src/frenchsectiontitles.tex}}{}
-\IfEq{\languageoption}{en}{\input{src/englishsectiontitle.tex}}{}
+\IfEq{\technologo}{false}{\renewcommand{\textlogo}[1]{}}{}
+\IfEq{\coloroption}{}{\input{src/colors/colors_settings.tex}}{}
+\IfEq{\coloroption}{nocolor}{\input{src/colors/no_color_settings.tex}}{}
+\IfEq{\languageoption}{fr}{\input{src/section/frenchsectiontitles.tex}}{}
+\IfEq{\languageoption}{en}{\input{src/section/englishsectiontitle.tex}}{}
+\input{data/technos.tex}
 
 
 \sethighlightbar{

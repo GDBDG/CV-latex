@@ -1,105 +1,8 @@
-%Variebles
-\newcommand{\@mail}{}
-\newcommand{\@nationnality}{}
-\newcommand{\@wantedjob}{}
-\newcommand{\@adress}{}
-\newcommand{\@phonenumber}{}
-\newcommand{\@permisB}{true}
-%Setters
-\newcommand{\setmail}[1]{
-    \renewcommand
-        {\@mail}
-        {\infofield
-            {\faEnvelope}
-            {\href{mailto:#1}{#1}}
-        }
-}
-
-\newcommand{\setnationnality}[1]{
-    \renewcommand
-        {\@nationnality}
-        {\infofield
-            {\faGlobe}{#1}
-        }
-}
-
-\newcommand{\setwantedjob}[1]{\renewcommand{\@wantedjob}{#1}}
-\newcommand{\setadress}[1]{
-    \renewcommand
-        {\@adress}
-        {\infofield
-            {\faMapMarker*}
-            {#1}
-        }
-}
-\newcommand{\setnumberphone}[1]{
-    \renewcommand
-        {\@phonenumber}
-        {\infofield
-            {\faPhone}
-            {#1}
-        }
-    }
-\newcommand{\setpermisB}[1]{
-    \ifthenelse{\equal{#1}{false}}
-        {}
-        {\renewcommand
-            {\@permisB}
-            {\infofield
-                {\faCar}
-                {Permis B}
-            }
-        }
-    }
-
-
-
-%----------------------------------------------------------------
-%Skills
-
-
-\newcommand{\@skilllist}{}
-
-\newcommand{\addskill}[1]{
-    \makeatletter
-    \g@addto@macro\@skilllist{#1}
-    \makeatother
-}
-
-
-\newcommand{\@name}{}
-\newcommand{\setname}[1]{\renewcommand{\@name}{#1}}
-
-\newcommand{\@jobdescription}{}
-\newcommand{\setjobdescription}[1]{\renewcommand{\@jobdescription}{#1}}
-
-\newcommand{\@languages}{}
-\newcommand{\setlanguages}[1]{\renewcommand{\@languages}{#1}}
-
-\newcommand{\@experience}{}
-
-\newcommand{\addexperience}[1]{
-    \makeatletter
-    \g@addto@macro\@experience{#1}    
-    \makeatother
-}
-
-\newcommand{\@interests}{}
-\newcommand{\addinterest}[2]{
-    \makeatletter
-    \g@addto@macro\@interests{\infofield{#1}{#2}}    
-    \makeatother
-}   
-
-\newcommand{\@formation}{}
-\newcommand{\addformation}[1]{
-    \makeatletter
-    \g@addto@macro\@formation{#1}    
-    \makeatother
-} 
-
-\newcommand{\@certifications}{}
-\newcommand{\iscertificationempty}{true}
+\input{src/metadata/metadata_variables.tex}
+\input{src/skills/skill_variable.tex}
+\input{src/experience/experience_variable.tex}
+\input{src/hobbie/hobbie_variable.tex}
+\input{src/formation/formation_variable.tex}  
 
 %#1 Certification name
 %#2 badge
@@ -115,11 +18,4 @@
         \end{minipage}
     }
     % \\[0.5em]
-}
-
-\newcommand{\addcertification}[1]{
-    \renewcommand{\iscertificationempty}{false}
-    \makeatletter
-    \g@addto@macro\@certifications{#1}    
-    \makeatother
 }

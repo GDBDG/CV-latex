@@ -1,0 +1,60 @@
+\newcommand{\@mail}{}
+\newcommand{\@nationnality}{}
+\newcommand{\@wantedjob}{}
+\newcommand{\@adress}{}
+\newcommand{\@phonenumber}{}
+\newcommand{\@permisB}{true}
+%Setters
+\newcommand{\setmail}[1]{
+    \renewcommand
+        {\@mail}
+        {\infofield
+            {\faEnvelope}
+            {\href{mailto:#1}{#1}}
+        }
+}
+
+\newcommand{\setnationnality}[1]{
+    \renewcommand
+        {\@nationnality}
+        {\infofield
+            {\faGlobe}{#1}
+        }
+}
+
+\newcommand{\setwantedjob}[1]{\renewcommand{\@wantedjob}{#1}}
+\newcommand{\setadress}[1]{
+    \renewcommand
+        {\@adress}
+        {\infofield
+            {\faMapMarker*}
+            {#1}
+        }
+}
+\newcommand{\setnumberphone}[1]{
+    \renewcommand
+        {\@phonenumber}
+        {\infofield
+            {\faPhone}
+            {#1}
+        }
+    }
+\newcommand{\setpermisB}[1]{
+    \ifthenelse{\equal{#1}{false}}
+        {}
+        {\renewcommand
+            {\@permisB}
+            {\infofield
+                {\faCar}
+                {Permis B}
+            }
+        }
+    }
+\newcommand{\@name}{}
+\newcommand{\setname}[1]{\renewcommand{\@name}{#1}}
+
+\newcommand{\@jobdescription}{}
+\newcommand{\setjobdescription}[1]{\renewcommand{\@jobdescription}{#1}}
+
+\newcommand{\@languages}{}
+\newcommand{\setlanguages}[1]{\renewcommand{\@languages}{#1}}

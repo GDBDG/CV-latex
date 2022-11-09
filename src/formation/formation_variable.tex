@@ -1,0 +1,15 @@
+\newcommand{\@formation}{}
+\newcommand{\addformation}[1]{
+    \makeatletter
+    \g@addto@macro\@formation{#1}    
+    \makeatother
+} 
+
+\newcommand{\@certifications}{}
+\newcommand{\iscertificationempty}{true}
+\newcommand{\addcertification}[1]{
+    \renewcommand{\iscertificationempty}{false}
+    \makeatletter
+    \g@addto@macro\@certifications{#1}    
+    \makeatother
+}
