@@ -1,6 +1,7 @@
 \def\BB{$\bullet$}
 
-% #path to img to show in a text line
+% #1 path to img to show in a text line
+% Add a graphic in the current text line
 \newcommand{\textlogo}[1]{$\vcenter{\hbox{\includegraphics[width=10pt]{#1}}}$}
 
 % Header with name and wanted job
@@ -22,8 +23,8 @@
 }
 
 
-% icon shortcut
-% #1 : icon color
+% display a faicon, and the text content.
+% #1 : icon color (optionnal)
 % #2 : icon
 % #3 : content
 \newcommand{\infofield}[3][iconcolor]
@@ -42,13 +43,14 @@
     \\[0.5em]
 }
 
-% CV skill : name of the skill and logo if available
+% CV skill : show the skill name, the logo (if provided), and the skill bar
 % #1 : name of the skill
 % #2 : logo path, empty if no logo
-% #3 : grade on the skill (between 0 and 1)lat
+% #3 : grade on the skill (between 0 and 1)
 \newcommand{\cvskill}[3] {
+    % The logo is hidden by the option noskillslogo
 	\begin{tabular*}{1\mpwidth}{p{0.72\mpwidth}  r}
- 		\textbf{#1} & \IfEq{#2}{}{}{\includegraphics[width=0.5cm]{#2}}\\
+ 		\textbf{#1} & \IfEq{#2}{}{}{\IfEq{\skillslogo}{false}{}{\includegraphics[width=0.5cm]{#2}}}\\
 	\end{tabular*}%
 	\hspace{4pt}
 	\begin{tikzpicture}[scale=1,rounded corners=2pt,very thin]

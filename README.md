@@ -8,9 +8,16 @@ This CV use literally variables for the data, with setters (``\setvarname``), or
 This document takes the options provided by the class ``article``, but be carefull, the result might be strange.
 It provides also options to change the color very easily, and the section's titles to put use english.
 * With no options, it uses the colors defined in the file ``src/colors_settings.tex``. (You don't need to touch or understand this file), and the section's titles defined in ``src/frenchsectiontitle.tex`` (french titles).
-* With the option ``nocolor``, all the colors are changed in black. (defined in the file ``src/no_colors_settings``.)
+* With the option ``nocolor``, all the colors are changed in black. (defined in the file ``src/no_colors_settings``). 
+    * Triggers also the option ``notechnologo``.
+    * Triggers also the option ``noskillslogo``.
 * With the option ``en``, the section's titles are changed to use English (title defined in ``src/englishsectiontitle.tex``).
-
+* Option ``notechnologo`` : the technos logo are hidden (except for the skills logo).       
+    * Triggered by the option ``nocolor``.
+    * Triggered by the option ``noskillslogo``.
+* Option ``noskillslogo`` : hide technos logo also in the skill section.  
+    * Triggered by the option ``nocolor``.
+    * Triggers also the option ``notechnologo``.
 ## The contact values and languages competences
 All the contact values and languages data are defined in the file ``data/metadata.tex``. There are already the setters, with explicit names, please just put your content, that will be displayed in the document.
 
@@ -30,7 +37,9 @@ This file uses 1 command :
 * \addinterest[2] : this command add your interest in the list that is displayed in the document.
     * #1 the logo of the hobby (recommended to use a logo defined with the package [fontawesome5](https://latexdraw.com/wp-content/uploads/2021/01/fontawesome5_2.pdf)). It can be empty.
     * #2 : the name of the jobby
-
+## The file technos.tex
+This file is required by this cls. It can remain empty.
+Its purpose is to define the commands for the technos, in order to show their logo in the text. To declare a techno with a logo, you must use the command ``\textlogo``. It include a graphic in a text line, but its behaviour is controlled by the option ``notechnologo``.
 ## The commands cvevent and divider
 
 The command ``\cvevent`` is used for the education and experience fields

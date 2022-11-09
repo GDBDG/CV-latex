@@ -6,14 +6,21 @@
 \newcommand{\languageoption}{fr}
 \newcommand{\coloroption}{}
 \newcommand{\technologo}{}
+\newcommand{\skillslogo}{}
 \DeclareOption{nocolor}{
-    \IfEq{\coloroption}{}{\renewcommand{\coloroption}{nocolor}}{\ClassWarning{CV}{color option already changed}}
+    \IfEq{\coloroption}{}{}{\ClassWarning{CV}{color option already changed}}
     \renewcommand{\coloroption}{nocolor}
+    \renewcommand{\skillslogo}{false}
+    \renewcommand{\technologo}{false}
 }
 \DeclareOption{en}{
     \IfEq{\languageoption}{fr}{\renewcommand{\languageoption}{en}}{\ClassWarning{CV}{color option already changed}}
 }
 \DeclareOption{notechnologo}{
+    \renewcommand{\technologo}{false}
+}
+\DeclareOption{noskillslogo}{
+    \renewcommand{\skillslogo}{false}
     \renewcommand{\technologo}{false}
 }
 \DeclareOption*{
