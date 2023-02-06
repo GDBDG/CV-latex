@@ -27,7 +27,7 @@
     \PassOptionsToClass{\CurrentOption}{article}
 }
 \ProcessOptions\relax
-\LoadClass{article}
+\LoadClass[10pt]{article}
 
 \input{src/packagesCV.tex}    
 \input{src/geometry_settings.tex}
@@ -69,8 +69,8 @@
 \setmainbar{
     \nameheader
 
-    \section[\faGraduationCap]{\educationtitle}
-        \@formation
+    % \section[\faGraduationCap]{\educationtitle}
+    %     \@formation
     \section[\faCheck]{\experiencetitle}
         \@experience
         
